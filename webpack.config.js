@@ -4,6 +4,11 @@ module.exports = {
     entry: {
         app: './app/js/main.js'
     },
+    devServer:{
+        contentBase: path.join(_dirname,"dist"),
+        compress: true,
+        port: 9000
+    },
     module: {
         loaders: [{
             test: /\.html$/,
