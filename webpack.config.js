@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -18,10 +19,21 @@ module.exports = {
         }, {
             test: /\.vue$/,
             loader: 'vue-loader',
-            options:{
-                loaders:{
-                    css: 'vue-style-loader!css-loader!px2rem-loader?remUnit=75&remPrecision=8',
-                    scss: 'vue-style-loader!css-loader!px2rem-loader?remUnit=75&remPrecision=8!sass-loaderj'
+            options: {
+                cssModules: {
+                    localIdentName: '[path][name]---[local]---[hash:base64:5]',
+                    camelCase: true,
+                },
+
+                loaders: {
+                    css: ExtractTextPlugin.extract({
+                        use: 'css-loader!px2rem-loader?remUnit=75&remPrecision=8',
+                        fallback: 'vue-style-loader'
+                    }),
+                    scss: ExtractTextPlugin.extract({
+                        use: 'css-loader!px2rem-loader?remUnit=75&remPrecision=8!sass-loader',
+                        fallback: 'vue-style-loader'
+                    }),
                 }
             }
         }, {
@@ -33,10 +45,11 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'Development'
-        })
+        }),
+        new ExtractTextPlugin("style.css")
     ],
-    resolve:{
-        alias:{
+    resolve: {
+        alias: {
             'vue$': 'vue/dist/vue.esm.js'
         }
     },

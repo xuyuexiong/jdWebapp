@@ -1,5 +1,5 @@
 <template lang="html">
-    <div class="home">
+    <div class="$style.home">
         <h1>home</h1>
     </div>
 </template>
@@ -8,7 +8,7 @@
 export default {};
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 @import "../../css/reset.scss";
 .home {
   color: red;
