@@ -55,5 +55,12 @@
   "bugs": {
     "url": "https://github.com/xuyuexiong/jdWebapp/issues"
   },
-  "homepage": "https://github.com/xuyuexiong/jdWebapp#readme"
+  "homepage": "https://github.com/xuyuexiong/jdWebapp#readme",
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "html-loader": "^0.5.5",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.22.1",
+    "vue-loader": "^15.3.0"
+  }
 }
