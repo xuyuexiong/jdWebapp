@@ -6,7 +6,7 @@
                     <img :src="{item.src}" alt="" />
                 </router-link>
             </swiper-slide>
-            <div class="swiper-pagination" v-if="options.pagination"></div>
+            <div class="swiper-pagination" v-if="options.pagination" slot="pagination"></div>
         </swiper>
     </section>
 </template>
@@ -19,6 +19,10 @@ export default {
     swiperSlide
   },
   props: {
+    cname: {
+      type: String,
+      default: ""
+    },
     options: {
       type: Object,
       default() {
@@ -32,11 +36,11 @@ export default {
         };
       }
     },
-    items:{
-        type :Array,
-        default(){
-            return []
-        }
+    items: {
+      type: Array,
+      default() {
+        return [];
+      }
     }
   }
 };
