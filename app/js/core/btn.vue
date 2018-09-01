@@ -1,28 +1,28 @@
-<template lang="html">
+<template>
     <div :class="[btnClass,cname]">
-		<slot />
-    </div>      
+        <slot/>
+    </div>
 </template>
 
 <script>
 export default {
-  props: {
-    cname: {
-      type: String,
-      default: ""
-    }
-  },
-  data() {
-    return {
-      btnClass: "btn"
-    };
-  }
-};
+    props: {
+        cname: {
+            type: String,
+            default: "",
+        },
+    },
+    data() {
+        return {
+            btnClass: "btn",
+        }
+    },
+}
 </script>
 
 <style lang="scss">
-	@import "../../css/element.scss";
-	.btn{
-		@include btn;
-	}
+@import "../../css/element.scss";
+.btn{
+  @include btn;
+}
 </style>

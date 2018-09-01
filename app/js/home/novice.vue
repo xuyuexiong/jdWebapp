@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import Panel from "../core/pannel.vue";
+import Panel from "../core/panel.vue";
 export default {
   components: {
     Panel
