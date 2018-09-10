@@ -7,6 +7,7 @@
         <Ada/>
         <Money/>
         <Adb/>
+        <Finance/>
     </div>
 </template>
 
@@ -18,6 +19,7 @@ import Slider from "./mslider.vue"
 import Ada from "./ada.vue"
 import Adb from "./adb.vue"
 import Money from "./money.vue"
+import Finance from "./finnace.vue"
 
 export default {
     components: {
@@ -28,6 +30,7 @@ export default {
         Ada,
         Money,
         Adb,
+        Finance,
     },
 }
 </script>
