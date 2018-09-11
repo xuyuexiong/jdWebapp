@@ -1,6 +1,6 @@
 <template>
     <Panel :class="$style.panel" title="公司信息">
-        <ul :class="$style.content">
+        <ul :class="[$style.content,cname]">
             <li>
                 <img src="//img12.360buyimg.com/jrpmobile/jfs/t2842/350/3035567089/14791/5f6ff93d/577cf395N31e76288.png?width=1125&height=252" alt="">
             </li>
@@ -32,6 +32,12 @@ import Panel from "../core/panel.vue";
 export default {
   components: {
     Panel
+  },
+  props:{
+    cname:{
+      type: String,
+      default:"",
+    }
   }
 };
 </script>
