@@ -5,6 +5,7 @@
         <Navbar/>
         <Footor cname="mfooter"/>
         <Daily/>
+        <In/>
     </div>
 </template>
 
@@ -14,6 +15,7 @@ import Footor from "../public/footer.vue";
 import Navbar from "../public/navbar.vue";
 import Slider from "./rslider.vue";
 import Daily from "./daily.vue";
+import In from "./in.vue";
 
 export default {
   components: {
@@ -22,6 +24,7 @@ export default {
     Navbar,
     Footor,
     Daily,
+    In,
   }
 };
 </script>
